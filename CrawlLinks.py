@@ -29,7 +29,7 @@ for i in range(1, 20):
             EC.presence_of_element_located((By.CSS_SELECTOR, 'div._95X4G'))
         )
     except Exception as e:
-        print(f"Không thể tải trang hoặc không tìm thấy phần tử: {e}")
+        print(f"Could not load the page: {e}")
         continue
 
     # Lấy mã nguồn trang và phân tích bằng BeautifulSoup
@@ -55,4 +55,4 @@ with open('urls.txt', 'w', encoding='utf-8') as file:
     for link in unique_hrefs:
         file.write(link + '\n')
 
-print(f"Đã lưu {len(unique_hrefs)} liên kết vào urls.txt")
+print(f"Saved {len(unique_hrefs)} pages into urls.txt")

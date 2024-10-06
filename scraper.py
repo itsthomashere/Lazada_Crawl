@@ -39,7 +39,7 @@ def scrape_reviews(driver, url):
                 (By.CSS_SELECTOR, '.pdp-mod-review'))
         )
     except Exception:
-        print(f"Không tìm thấy phần bình luận {url}")
+        print(f"Could not find comments section {url}")
         return reviews
 
     soup = BeautifulSoup(driver.page_source, 'html.parser')
@@ -66,7 +66,7 @@ def scrape_reviews(driver, url):
                     strip=True) if content_element else 'N/A'
                 reviews.append(review)
     except Exception as e:
-        print(f"Error: {e} trên trang {url}")
+        print(f"Error: {e} On page {url}")
 
     return reviews
 
